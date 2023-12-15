@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
+    <style>
+	
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: url('de.webp') center/cover no-repeat;
+}
+.square
+{
+	position: relative;
+	width: 500px;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.square i
+{
+	position: absolute;
+	inset: 0;
+	border: 2px solid #f44905;
+	transition: 0.5s;
+}
+.square i:nth-child(1)
+{
+	border-radius: 58% 72% 63% 37% / 41% 44% 56% 59%;
+	animation: animate 6s linear infinite;
+}
+.square i:nth-child(2)
+{
+	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+	animation: animate 4s linear infinite;
+}
+.square i:nth-child(3)
+{
+	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+	animation: animate2 10s linear infinite;
+}
+.square i:nth-child(4)
+{
+	border-radius: 58% 72% 63% 37% / 41% 44% 56% 59%;
+	animation: animate 12s linear infinite;
+}
+.square i:nth-child(5)
+{
+	border-radius: 58% 72% 63% 37% / 41% 44% 56% 59%;
+	animation: animate 14s linear infinite;
+}
+
+.square:hover i
+{
+	border: 6px solid var(--clr);
+	filter: drop-shadow(0 0 20px var(--clr));
+}
+@keyframes animate
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(360deg);
+	}
+}
+@keyframes animate2
+{
+	0%
+	{
+		transform: rotate(360deg);
+	}
+	100%
+	{
+		transform: rotate(0deg);
+	}
+}
+.login 
+{
+	position: absolute;
+	width: 300px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+.login h2 
+{
+	font-size: 2em;
+	color: #fc8600;
+}
+.login .inputBx 
+{
+	position: relative;
+	width: 100%;
+}
+.login .inputBx input 
+{
+	position: relative;
+	width: 100%;
+	padding: 12px 20px;
+	background: transparent;
+	border: 2px solid #d818a8;
+	border-radius: 40px;
+	font-size: 1.2em;
+	color: #f50606;
+	box-shadow: none;
+	outline: none;
+}
+.login .inputBx input[type="submit"]
+{
+	width: 100%;
+  	background: #00ff11;
+	background: linear-gradient(45deg,#4207f0,#09e677);
+	border: none;
+	cursor: pointer;
+}
+.login .inputBx input::placeholder 
+{
+	color: rgba(202, 248, 0, 0.75);
+}
+.login .links
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+.login .links a 
+{
+	color: #10f45f;
+	text-decoration: none;
+}
+
+
+       
+
+        .inputBx .eye-icon
+	 {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #d818a8;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="square">
+        <i style="--clr:#1a0bef;"></i>
+        <i style="--clr:#05f60d;"></i>
+        <i style="--clr:#ec0abf;"></i>
+        <i style="--clr:#fe007b;"></i>
+        <i style="--clr:#f5e909;"></i>
+        
+        <div class="login">
+            <h2>Login</h2>
+            <div class="inputBx">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="inputBx">
+                <input type="password" id="password" placeholder="Password">
+                <span class="eye-icon" onclick="togglePasswordVisibility('password')">&#128065;</span>
+            </div>
+            <div class="inputBx">
+                <a href="index.html" >
+                <input type="submit" value="Sign in">
+                </a>
+            </div>
+
+            <div class="links">
+                <a href="forgot-password.html">Forget Password</a>
+                <a href="register.html">Signup</a>
+              
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function togglePasswordVisibility(id) {
+            const passwordInput = document.getElementById(id);
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>
